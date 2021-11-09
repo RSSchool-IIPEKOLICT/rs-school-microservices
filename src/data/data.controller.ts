@@ -1,10 +1,10 @@
 import { Controller, Get } from '@nestjs/common'
-import { Data } from '../models/data'
+import { Data } from '../interfaces/data'
 
 @Controller('data')
 export class DataController {
-	@Get()
-	async getData(): Promise<Data[]> {
-		return import('./data.json')
-	}
+    @Get()
+    async getData(): Promise<Data[]> {
+        return import('./data.json')
+    }
 }

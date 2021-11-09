@@ -6,13 +6,13 @@ import { ServeStaticModule } from '@nestjs/serve-static'
 import { resolve } from 'path'
 
 @Module({
-	imports: [
-		DataModule,
-		ServeStaticModule.forRoot({
-			rootPath: resolve(__dirname, '..', 'public'),
-		}),
-	],
-	controllers: [AppController],
-	providers: [AppService],
+    imports: [
+        DataModule,
+        ServeStaticModule.forRoot({
+            rootPath: resolve(__dirname, '..', 'public'),
+        }),
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}
