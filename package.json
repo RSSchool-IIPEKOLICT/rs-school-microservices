@@ -1,8 +1,8 @@
 {
   "name": "art-quiz-backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Backend nest app for artQuiz RS School task",
+  "author": "IIPEKOLICT<iipekolict@gmail.com>",
   "private": true,
   "license": "MIT",
   "engines": {
