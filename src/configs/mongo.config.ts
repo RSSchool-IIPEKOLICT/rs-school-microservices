@@ -7,7 +7,6 @@ export const getMongoConfig = async (
   return {
     uri: configService.get('MONGO_URI'),
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
   }
 }
