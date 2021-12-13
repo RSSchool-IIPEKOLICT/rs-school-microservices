@@ -1,9 +1,9 @@
 import { prop } from '@typegoose/typegoose'
 import { TimeStamps, Base } from '@typegoose/typegoose/lib/defaultClasses'
 
-export interface UserModel extends Base {}
+export interface ArtQuizUserModel extends Base {}
 
-export class UserModel extends TimeStamps {
+export class ArtQuizUserModel extends TimeStamps {
   @prop({ unique: true })
   nickname: string
 

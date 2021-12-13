@@ -1,12 +1,13 @@
-import { Module } from '@nestjs/common'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
-import { ServeStaticModule } from '@nestjs/serve-static'
 import { resolve } from 'path'
-import { UserModule } from './user/user.module'
+import { Module } from '@nestjs/common'
+import { ServeStaticModule } from '@nestjs/serve-static'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypegooseModule } from 'nestjs-typegoose'
+
 import { getMongoConfig } from './configs/mongo.config'
+import { ArtQuizModule } from './art.quiz/art.quiz.module'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { getMongoConfig } from './configs/mongo.config'
     ServeStaticModule.forRoot({
       rootPath: resolve(__dirname, '..', 'public'),
     }),
-    UserModule,
+    ArtQuizModule,
   ],
   controllers: [AppController],
   providers: [AppService],

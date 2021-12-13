@@ -1,18 +1,19 @@
 import { Injectable } from '@nestjs/common'
-import { UserModel } from './user.model'
-import { ModelType } from '@typegoose/typegoose/lib/types'
 import { InjectModel } from 'nestjs-typegoose'
-import { UserDto } from './user.dto'
+import { ModelType } from '@typegoose/typegoose/lib/types'
+import { ArtQuizUserModel } from './art.quiz.user.model'
+import { ArtQuizUserDto } from './art.quiz.user.dto'
 
 @Injectable()
-export class UserService {
+export class ArtQuizService {
   private readonly defaultAnswers: number[] = [...Array(12).keys()].map(() => 0)
 
   constructor(
-    @InjectModel(UserModel) private readonly userModel: ModelType<UserModel>
+    @InjectModel(ArtQuizUserModel)
+    private readonly userModel: ModelType<ArtQuizUserModel>
   ) {}
 
-  async getAll(): Promise<UserModel[]> {
+  async getAll(): Promise<ArtQuizUserModel[]> {
     return this.userModel.find().lean()
   }
 
@@ -26,7 +27,7 @@ export class UserService {
     return newUser.id.toString()
   }
 
-  async updateUser({ id, painters, images }: UserDto) {
+  async updateUser({ id, painters, images }: ArtQuizUserDto) {
     await this.userModel.findByIdAndUpdate(id, { painters, images })
     return true
   }

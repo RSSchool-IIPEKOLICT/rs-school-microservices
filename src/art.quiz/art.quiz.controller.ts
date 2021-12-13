@@ -1,14 +1,14 @@
 import { Body, Controller, Delete, Get, Post, Put, Query } from '@nestjs/common'
-import { UserModel } from './user.model'
-import { UserService } from './user.service'
-import { UserDto } from './user.dto'
+import { ArtQuizService } from './art.quiz.service'
+import { ArtQuizUserModel } from './art.quiz.user.model'
+import { ArtQuizUserDto } from './art.quiz.user.dto'
 
-@Controller('user')
-export class UserController {
-  constructor(private readonly userService: UserService) {}
+@Controller('art-quiz')
+export class ArtQuizController {
+  constructor(private readonly userService: ArtQuizService) {}
 
   @Get()
-  async getAll(): Promise<UserModel[]> {
+  async getAll(): Promise<ArtQuizUserModel[]> {
     return this.userService.getAll()
   }
 
@@ -18,7 +18,7 @@ export class UserController {
   }
 
   @Put('update')
-  async update(@Body() dto: UserDto): Promise<boolean> {
+  async update(@Body() dto: ArtQuizUserDto): Promise<boolean> {
     return this.userService.updateUser(dto)
   }
 
