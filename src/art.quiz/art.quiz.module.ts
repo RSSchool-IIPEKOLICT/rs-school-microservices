@@ -9,7 +9,7 @@ import { ArtQuizUserModel } from './art.quiz.user.model'
     TypegooseModule.forFeature([
       {
         typegooseClass: ArtQuizUserModel,
-        schemaOptions: { collection: 'user' },
+        schemaOptions: { collection: 'art-quiz-user' },
       },
     ]),
   ],
