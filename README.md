@@ -10,4 +10,4 @@ npm i
 npm run start
 ```
 
-[Click to open deploy page](https://iipekolict--rs-school-microservices.herokuapp.com/)
+[Click to open deploy page](https://iipekolict--rs-school-api.herokuapp.com/)
